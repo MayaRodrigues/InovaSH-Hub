@@ -1,0 +1,765 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>InovaSH Hub — Engajamento Colaborativo para um Hub de Inovação | UTFPR Santa Helena</title>
+<meta name="description" content="Projeto de Extensão Universitária da UTFPR Câmpus Santa Helena que articula a Quádrupla Hélice para criar colaborativamente o InovaSH Hub, conectado ao Iguassu Valley." />
+
+<!-- ============================== FONTS ============================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="brand" aria-label="InovaSH Hub">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h4l2-7 4 14 2-7h6"/>
+        </svg>
+      </span>
+      <span>
+        InovaSH Hub
+        <small>UTFPR · Santa Helena</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#etapas">Etapas</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <a class="btn btn--primary btn--sm nav__cta desktop" href="#contato">
+      Participe da pesquisa
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+
+  <nav class="nav__drawer" id="navDrawer" aria-label="Mobile">
+    <a href="#sobre">Sobre o projeto</a>
+    <a href="#objetivos">Objetivos</a>
+    <a href="#metodologia">Metodologia</a>
+    <a href="#etapas">Etapas</a>
+    <a href="#helice">Quádrupla Hélice</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#impacto">Impacto & ODS</a>
+    <a href="#contato">Contato</a>
+    <a class="btn btn--primary" href="#contato">Participe da pesquisa</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <div class="hero__tag">
+          <span>Em curso</span>
+          <span>NOV 2025 → NOV 2028 · 3 ANOS</span>
+        </div>
+
+        <h1>
+          Construindo, <em>juntos</em>,<br />o hub de inovação<br />de Santa Helena.
+        </h1>
+
+        <p class="hero__lede">
+          O <strong style="color:#f0f6ff;font-weight:600;">InovaSH Hub</strong> é um projeto de extensão da UTFPR que engaja universidade, governo, setor produtivo e sociedade civil para criar colaborativamente um hub conectado ao Iguassu Valley — o melhor ecossistema de inovação do Brasil em 2022.
+        </p>
+
+        <div class="hero__ctas">
+          <a class="btn btn--tech" href="#sobre">
+            Saiba mais
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#contato" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:#fff">
+            Participe da pesquisa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="hero__meta">
+          <div><span>Instituição</span><strong>UTFPR Santa Helena</strong></div>
+          <div><span>Parceria</span><strong>NAPI GDCT&amp;I PR</strong></div>
+          <div><span>Região</span><strong>Iguassu Valley</strong></div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__ring"></div>
+        <div class="hero__ring hero__ring--2"></div>
+        <div class="hero__ring hero__ring--3"></div>
+        <div class="hero__orb"></div>
+        <div class="hero__chips">
+          <div class="hero__chip"><i></i>Universidade</div>
+          <div class="hero__chip"><i></i>Governo</div>
+          <div class="hero__chip"><i></i>Setor produtivo</div>
+          <div class="hero__chip"><i></i>Sociedade civil</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PARTNERS STRIP ============================== -->
+<div class="partners">
+  <div class="container">
+    <div class="partners__row">
+      <span>UTFPR Câmpus Santa Helena</span>
+      <span class="dot">●</span>
+      <span>NAPI Gestão e Difusão de CT&amp;I PR</span>
+      <span class="dot">●</span>
+      <span>Iguassu Valley</span>
+      <span class="dot">●</span>
+      <span>Quádrupla Hélice · Etzkowitz 2013</span>
+      <span class="dot">●</span>
+      <span>Política Estadual de CT&amp;I</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================== SOBRE ============================== -->
+<section id="sobre">
+  <div class="container">
+    <div class="about__grid reveal">
+      <div>
+        <span class="eyebrow">01 — Sobre o projeto</span>
+        <h2 class="section-title">Um hub nasce do diálogo entre quem faz inovação na região.</h2>
+      </div>
+      <div class="about__body">
+        <p>O oeste do Paraná abriga o <strong>Iguassu Valley</strong>, eleito em 2022 o melhor ecossistema regional de inovação do Brasil. Dentro dele, a microrregião de Santa Helena precisa de um espaço articulador que conecte talentos, demandas produtivas e políticas públicas — um hub.</p>
+        <p>O <strong>InovaSH Hub</strong> nasce dessa necessidade. Ao invés de propor uma estrutura pronta, o projeto convida os atores do território a desenhá-la em conjunto. A abordagem segue a lógica da <strong>Quádrupla Hélice</strong> (Etzkowitz, 2013): Universidade, Governo, Setor Produtivo e Sociedade Civil construindo, simultaneamente, o problema e a solução.</p>
+
+        <div class="callout">
+          <small>Por que agora</small>
+          <p><strong>Articulação com a Política Estadual de CT&amp;I e o NAPI GDCT&amp;I do Paraná</strong> — alinhando o hub às áreas prioritárias do estado e conectando Santa Helena à malha de inovação paranaense.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== OBJETIVOS ============================== -->
+<section id="objetivos" class="objectives">
+  <div class="container">
+    <div class="objectives__head reveal">
+      <div>
+        <span class="eyebrow">02 — Objetivos</span>
+        <h2 class="section-title">Um objetivo geral. Três caminhos para chegar lá.</h2>
+      </div>
+    </div>
+
+    <div class="bigobj reveal">
+      <div class="bigobj__num">01</div>
+      <div>
+        <span class="bigobj__label">Objetivo geral</span>
+        <h3>Sensibilizar e engajar os atores do ecossistema regional de inovação do oeste do Paraná — especialmente da microrregião de Santa Helena — para a criação colaborativa do InovaSH Hub, articulado às áreas prioritárias da Política Estadual de CT&amp;I.</h3>
+      </div>
+    </div>
+
+    <div class="obj-grid">
+      <article class="obj-card reveal">
+        <span class="obj-card__num">ESPECÍFICO / 01</span>
+        <h4>Levantar visão, necessidades e interesses</h4>
+        <p>Coletar dados estruturados junto aos atores da Quádrupla Hélice para mapear demandas, expectativas e oportunidades latentes na região.</p>
+      </article>
+      <article class="obj-card reveal">
+        <span class="obj-card__num">ESPECÍFICO / 02</span>
+        <h4>Realizar eventos de consulta pública</h4>
+        <p>Promover encontros e desdobramentos participativos que validem coletivamente os achados e construam o desenho do hub.</p>
+      </article>
+      <article class="obj-card reveal">
+        <span class="obj-card__num">ESPECÍFICO / 03</span>
+        <h4>Conectar resultados ao NAPI GDCT&amp;I PR</h4>
+        <p>Articular os entregáveis do projeto com o Núcleo de Apoio à Pesquisa e Inovação do estado, garantindo continuidade e impacto sistêmico.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== METODOLOGIA ============================== -->
+<section id="metodologia">
+  <div class="container">
+    <div class="method__grid">
+      <div class="reveal">
+        <span class="eyebrow">03 — Metodologia</span>
+        <h2 class="section-title">Matriz do Quadro Lógico, aplicada de forma participativa.</h2>
+        <p class="section-lede">
+          Estruturamos o projeto com a <strong>MQL</strong> (Pfeiffer, 2000; ASDI, 2003), uma ferramenta clássica para alinhar objetivos, atividades, indicadores e pressupostos — agora rodando em modo colaborativo com os atores do ecossistema.
+        </p>
+
+        <div class="method-status">
+          <div class="method-status__card">
+            <span class="pill"><i></i>Em curso</span>
+            <strong>Coleta de dados</strong>
+            <span>Formulários online com atores da Quádrupla Hélice</span>
+          </div>
+          <div class="method-status__card">
+            <span class="pill"><i></i>Em curso</span>
+            <strong>Análise SWOT</strong>
+            <span>Espaço Maker · UTFPR Santa Helena</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lfm reveal" aria-label="Matriz do Quadro Lógico">
+        <div class="lfm__head">
+          <div class="lfm__cell lfm__cell--h">Descrição</div>
+          <div class="lfm__cell lfm__cell--h">Indicador</div>
+          <div class="lfm__cell lfm__cell--h">Meio de verificação</div>
+          <div class="lfm__cell lfm__cell--h">Pressuposto</div>
+        </div>
+        <div class="lfm__row">
+          <div class="lfm__cell"><strong>Objetivo geral</strong><span>Hub colaborativo</span></div>
+          <div class="lfm__cell"><strong>Engajamento</strong><span>≥ 100 atores</span></div>
+          <div class="lfm__cell"><strong>Listas + atas</strong><span>de eventos</span></div>
+          <div class="lfm__cell"><strong>Apoio</strong><span>institucional</span></div>
+        </div>
+        <div class="lfm__row">
+          <div class="lfm__cell"><strong>Propósito</strong><span>Sensibilizar atores</span></div>
+          <div class="lfm__cell"><strong>Adesão</strong><span>≥ 70% respostas</span></div>
+          <div class="lfm__cell"><strong>Dashboards</strong><span>de formulários</span></div>
+          <div class="lfm__cell"><strong>Disponibilidade</strong><span>dos atores</span></div>
+        </div>
+        <div class="lfm__row">
+          <div class="lfm__cell"><strong>Resultados</strong><span>Diagnóstico + desenho</span></div>
+          <div class="lfm__cell"><strong>Entregáveis</strong><span>3 relatórios</span></div>
+          <div class="lfm__cell"><strong>Publicações</strong><span>e website</span></div>
+          <div class="lfm__cell"><strong>Continuidade</strong><span>NAPI GDCT&amp;I</span></div>
+        </div>
+        <div class="lfm__row">
+          <div class="lfm__cell"><strong>Atividades</strong><span>Coleta + eventos</span></div>
+          <div class="lfm__cell"><strong>Carga horária</strong><span>4.800 h</span></div>
+          <div class="lfm__cell"><strong>Cronograma</strong><span>2025–2028</span></div>
+          <div class="lfm__cell"><strong>Recursos</strong><span>UTFPR + parceiros</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ETAPAS ============================== -->
+<section id="etapas" class="timeline">
+  <div class="container">
+    <div class="reveal" style="max-width:720px">
+      <span class="eyebrow">04 — Etapas</span>
+      <h2 class="section-title">Três anos. Cinco etapas. Um caminho construído coletivamente.</h2>
+      <p class="section-lede">Do diagnóstico inicial à articulação institucional, cada etapa traz entregáveis concretos e espaços de escuta da comunidade.</p>
+    </div>
+
+    <div class="tl">
+      <div class="tl__step tl__step--active reveal">
+        <div class="tl__dot"></div>
+        <span class="tl__num">Etapa 01 · 2025–26</span>
+        <h4>Diagnóstico do ecossistema</h4>
+        <p>Mapeamento dos atores, coleta de visões via formulários e levantamento bibliográfico.</p>
+        <span class="tl__tag">Em curso</span>
+      </div>
+      <div class="tl__step tl__step--active reveal">
+        <div class="tl__dot"></div>
+        <span class="tl__num">Etapa 02 · 2026</span>
+        <h4>Análise SWOT</h4>
+        <p>Diagnóstico interno do Espaço Maker da UTFPR como núcleo de operação inicial do hub.</p>
+        <span class="tl__tag">Em curso</span>
+      </div>
+      <div class="tl__step reveal">
+        <div class="tl__dot"></div>
+        <span class="tl__num">Etapa 03 · 2026–27</span>
+        <h4>Consulta pública</h4>
+        <p>Eventos abertos com a Quádrupla Hélice para validar e desdobrar os achados do diagnóstico.</p>
+        <span class="tl__tag">A iniciar</span>
+      </div>
+      <div class="tl__step reveal">
+        <div class="tl__dot"></div>
+        <span class="tl__num">Etapa 04 · 2027</span>
+        <h4>Desenho do hub</h4>
+        <p>Co-criação do modelo de governança, operação e portfólio de serviços do InovaSH Hub.</p>
+        <span class="tl__tag">Planejada</span>
+      </div>
+      <div class="tl__step reveal">
+        <div class="tl__dot"></div>
+        <span class="tl__num">Etapa 05 · 2028</span>
+        <h4>Articulação NAPI GDCT&amp;I</h4>
+        <p>Conexão com a política estadual e prototipagem das primeiras operações do hub.</p>
+        <span class="tl__tag">Planejada</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== QUÁDRUPLA HÉLICE ============================== -->
+<section id="helice">
+  <div class="container">
+    <div class="reveal" style="max-width:680px">
+      <span class="eyebrow">05 — Quádrupla Hélice</span>
+      <h2 class="section-title">Quatro hélices girando na mesma direção.</h2>
+      <p class="section-lede">A inovação acontece quando os quatro setores deixam de operar em silos. O hub existe para alinhá-los.</p>
+    </div>
+
+    <div class="helix__grid">
+      <article class="helix-card helix-card--1 reveal">
+        <div class="helix-card__top">
+          <div class="helix-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg>
+          </div>
+          <span class="helix-card__num">/ 01</span>
+        </div>
+        <div>
+          <h4>Universidade</h4>
+          <p>Geração de conhecimento, formação de pessoas e laboratórios de prototipagem — a UTFPR como vetor inicial.</p>
+        </div>
+      </article>
+
+      <article class="helix-card helix-card--2 reveal">
+        <div class="helix-card__top">
+          <div class="helix-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg>
+          </div>
+          <span class="helix-card__num">/ 02</span>
+        </div>
+        <div>
+          <h4>Governo</h4>
+          <p>Políticas públicas, incentivos e infraestrutura — articulado com o Estado do Paraná e o município.</p>
+        </div>
+      </article>
+
+      <article class="helix-card helix-card--3 reveal">
+        <div class="helix-card__top">
+          <div class="helix-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          </div>
+          <span class="helix-card__num">/ 03</span>
+        </div>
+        <div>
+          <h4>Setor produtivo</h4>
+          <p>Demandas reais de empresas, indústria e cooperativas que se traduzem em problemas de pesquisa.</p>
+        </div>
+      </article>
+
+      <article class="helix-card helix-card--4 reveal">
+        <div class="helix-card__top">
+          <div class="helix-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="helix-card__num">/ 04</span>
+        </div>
+        <div>
+          <h4>Sociedade civil</h4>
+          <p>Cidadania ativa, terceiro setor e movimentos da região que dão sentido e legitimidade ao hub.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STATUS ATUAL ============================== -->
+<section class="status">
+  <div class="container">
+    <div class="reveal" style="max-width:680px">
+      <span class="eyebrow">06 — Status atual</span>
+      <h2 class="section-title">O que está acontecendo agora.</h2>
+      <p class="section-lede">Estamos na primeira metade do projeto — coletando dados, ouvindo e analisando antes de propor.</p>
+    </div>
+
+    <div class="status__grid">
+      <div class="status-card reveal">
+        <div class="status-card__chart" data-progress="5">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="42"/>
+            <circle class="fg" cx="50" cy="50" r="42" stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+          </svg>
+          <div class="lbl">5%</div>
+        </div>
+        <div>
+          <span class="pill"><i></i>Em andamento</span>
+          <h4>Coleta de dados</h4>
+          <p>Formulários online distribuídos para os quatro setores da Quádrupla Hélice. Resultados parciais já alimentando os primeiros relatórios.</p>
+        </div>
+      </div>
+
+      <div class="status-card reveal">
+        <div class="status-card__chart" data-progress="38">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="42"/>
+            <circle class="fg" cx="50" cy="50" r="42" stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+          </svg>
+          <div class="lbl">38%</div>
+        </div>
+        <div>
+          <span class="pill"><i></i>Em andamento</span>
+          <h4>Análise SWOT — Espaço Maker</h4>
+          <p>Diagnóstico estratégico do Espaço Maker da UTFPR Santa Helena, candidato a núcleo de operação do hub na fase inicial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EQUIPE ============================== -->
+<section id="equipe">
+  <div class="container">
+    <div class="reveal" style="max-width:680px">
+      <span class="eyebrow">07 — Equipe</span>
+      <h2 class="section-title">Pesquisadores e estudantes da UTFPR.</h2>
+      <p class="section-lede">Coordenação acadêmica somada a uma equipe multidisciplinar — docentes, pesquisadores e discentes.</p>
+    </div>
+
+    <div class="team__grid">
+      <article class="member reveal">
+        <div class="member__photo" data-role="Coordenadora">PZ</div>
+        <div class="member__info">
+          <strong>Profa. Paula Regina Zarelli</strong>
+          <span>Coordenadora</span>
+        </div>
+      </article>
+      <article class="member reveal">
+        <div class="member__photo" data-role="Vice-coord.">AB</div>
+        <div class="member__info">
+          <strong>Profa. Arlete T. Beuren</strong>
+          <span>Vice-coordenadora</span>
+        </div>
+      </article> 
+      <article class="member reveal">
+        <div class="member__photo" data-role="Bolsista">MP</div>
+        <div class="member__info">
+          <strong>Mayara R. Pereira</strong>
+          <span>Equipe técnica</span>
+        </div>
+      </article>
+      <article class="member reveal" style="background:var(--paper);border-style:dashed">
+        <div class="member__photo" data-role="Aberta" style="background:var(--white)">+</div>
+        <div class="member__info">
+          <strong>Vaga para você</strong>
+          <span>Estudantes e voluntários</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== IMPACTO / ODS ============================== -->
+<section id="impacto" class="impact">
+  <div class="container">
+    <div class="reveal" style="max-width:680px">
+      <span class="eyebrow">08 — Impacto esperado &amp; ODS</span>
+      <h2 class="section-title">Pessoas atendidas, horas dedicadas, agendas globais.</h2>
+      <p class="section-lede">O alcance esperado do InovaSH Hub conversa diretamente com os Objetivos de Desenvolvimento Sustentável da ONU.</p>
+    </div>
+
+    <div class="impact-grid reveal">
+      <div class="impact-num">
+        <span>Atendimento direto</span>
+        <strong>100<em>+</em></strong>
+        <small>pessoas diretamente atendidas</small>
+      </div>
+      <div class="impact-num">
+        <span>Alcance ampliado</span>
+        <strong>1.000<em>+</em></strong>
+        <small>pessoas indiretamente impactadas</small>
+      </div>
+      <div class="impact-num">
+        <span>Carga horária</span>
+        <strong>4.800<em>h</em></strong>
+        <small>de dedicação da equipe ao longo de 3 anos</small>
+      </div>
+    </div>
+
+    <div class="sdgs reveal">
+      <div class="sdgs__label">ODS alinhados</div>
+      <div class="sdgs__list">
+        <div class="sdg sdg--9">
+          <div class="sdg__badge">9</div>
+          <div class="sdg__txt">
+            <strong>Indústria, Inovação e Infraestrutura</strong>
+            <span>Construir infraestruturas resilientes e promover inovação</span>
+          </div>
+        </div>
+        <div class="sdg sdg--11">
+          <div class="sdg__badge">11</div>
+          <div class="sdg__txt">
+            <strong>Cidades e Comunidades Sustentáveis</strong>
+            <span>Tornar Santa Helena mais inclusiva, segura e sustentável</span>
+          </div>
+        </div>
+        <div class="sdg sdg--17">
+          <div class="sdg__badge">17</div>
+          <div class="sdg__txt">
+            <strong>Parcerias e Meios de Implementação</strong>
+            <span>Fortalecer parcerias globais e locais para o desenvolvimento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== NOTÍCIAS ============================== -->
+<section id="noticias">
+  <div class="container">
+    <div class="reveal" style="display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap">
+      <div style="max-width:520px">
+        <span class="eyebrow">09 — Notícias &amp; Eventos</span>
+        <h2 class="section-title">Acompanhe os marcos do projeto.</h2>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="#contato">Ver tudo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="news__grid">
+      <article class="post reveal">
+        <div class="post__cover post__cover--1">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none"><defs><pattern id="g1" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 20L20 0M-5 5L5 -5M15 25L25 15" stroke="white" stroke-width="0.6"/></pattern></defs><rect width="200" height="120" fill="url(#g1)"/></svg>
+          <span class="tag">Lançamento</span>
+        </div>
+        <div class="post__body">
+          <span class="post__date">Em breve · 2026</span>
+          <h4>Cerimônia de lançamento oficial do InovaSH Hub</h4>
+          <p>Encontro inaugural com os representantes da Quádrupla Hélice no campus da UTFPR.</p>
+          <span class="post__more">Em breve →</span>
+        </div>
+      </article>
+
+      <a class="post reveal" href="formularios.html" target="_self">
+        <div class="post__cover post__cover--2">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none"><defs><pattern id="g2" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="7" cy="7" r="1.5" fill="white"/></pattern></defs><rect width="200" height="120" fill="url(#g2)"/></svg>
+          <span class="tag">Pesquisa</span>
+        </div>
+        <div class="post__body">
+          <span class="post__date">Em curso · 2025</span>
+          <h4>Formulários online: chamada para participação</h4>
+          <p>Atores do ecossistema regional respondendo o questionário de diagnóstico estruturado.</p>
+          <span class="post__more">Participar →</span>
+        </div>
+      </a>
+
+      <article class="post reveal">
+        <div class="post__cover post__cover--3">
+          <svg viewBox="0 0 200 120" preserveAspectRatio="none"><defs><pattern id="g3" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M0 11h22M11 0v22" stroke="white" stroke-width="0.5"/></pattern></defs><rect width="200" height="120" fill="url(#g3)"/></svg>
+          <span class="tag">Diagnóstico</span>
+        </div>
+        <div class="post__body">
+          <span class="post__date">Em curso · 2025–26</span>
+          <h4>SWOT do Espaço Maker da UTFPR Santa Helena</h4>
+          <p>Diagnóstico estratégico do espaço como possível núcleo de operação inicial do hub.</p>
+          <span class="post__more">Saiba mais →</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTATO ============================== -->
+<section id="contato" class="contact">
+  <div class="container">
+    <div class="reveal" style="max-width:680px">
+      <span class="eyebrow">10 — Participe</span>
+      <h2 class="section-title">Sua visão é parte do hub.</h2>
+      <p class="section-lede">Responda à pesquisa, fale com a coordenação ou siga as redes — todo retorno alimenta o desenho coletivo do InovaSH Hub.</p>
+    </div>
+
+    <div class="contact__grid">
+      <form class="contact__form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="f-name">Nome</label>
+          <input type="text" id="f-name" name="name" placeholder="Seu nome completo" required />
+        </div>
+        <div class="field">
+          <label for="f-email">E-mail</label>
+          <input type="email" id="f-email" name="email" placeholder="voce@dominio.com" required />
+        </div>
+        <div class="field">
+          <label for="f-role">Você representa</label>
+          <select id="f-role" name="role">
+            <option>Universidade</option>
+            <option>Governo</option>
+            <option>Setor produtivo</option>
+            <option>Sociedade civil</option>
+            <option>Outro / estudante</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Mensagem</label>
+          <textarea id="f-msg" name="message" placeholder="Conte como podemos colaborar..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">
+          Enviar mensagem
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p class="mono" id="formStatus" style="font-size:12px;margin-top:14px;color:var(--tech);display:none">✓ Recebido. Em breve entraremos em contato.</p>
+      </form>
+
+      <div class="contact__side reveal">
+        <h3>Outras formas de chegar até nós</h3>
+        <p>Estamos abertos a parcerias institucionais, conexões com empresas, participação de estudantes e diálogo com a comunidade.</p>
+
+        <a class="contact-card" href="#" onclick="return false">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <div>
+            <strong>Pesquisa Quádrupla Hélice</strong>
+            <span>Link do formulário online · em breve</span>
+          </div>
+        </a>
+
+      <!--   <a class="contact-card" href="mailto:inovashhub@utfpr.edu.br">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div>
+            <strong>E-mail da coordenação</strong>
+            <span>inovashhub@utfpr.edu.br</span>
+          </div>
+        </a> -->
+
+        <a class="contact-card" href="#">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>UTFPR Câmpus Santa Helena</strong>
+            <span>Santa Helena · Paraná · Brasil</span>
+          </div>
+        </a>
+
+        <!-- <div class="socials" aria-label="Redes sociais">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16 5 12 5 12 5s-4 0-7.1.1C4.5 5.2 3.6 5.2 2.8 6 2.2 6.6 2 8 2 8S2 9.6 2 11.2v1.5C2 14.4 2 16 2 16s.2 1.4.8 2c.8.8 1.8.8 2.2.9 1.6.1 6.9.1 6.9.1s4 0 7.1-.1c.4-.1 1.3-.1 2.1-.9.6-.6.8-2 .8-2s0-1.6 0-3.3v-1.5C22 9.6 22 8 22 8z"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.55 7.49L22.5 22H16.2l-4.93-6.43L5.6 22H2.84l7.01-8.02L1.5 2h6.42l4.46 5.9zM17.07 20h1.86L7.02 4H5.07z"/></svg></a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="brand" style="color:#fff">
+          <span class="brand__mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+          </span>
+          <span style="color:#fff">
+            InovaSH Hub
+            <small style="color:#8aa5c4">UTFPR · Santa Helena</small>
+          </span>
+        </a>
+        <p>Projeto de extensão universitária construindo o hub de inovação do oeste do Paraná — junto com quem faz a região acontecer.</p>
+      </div>
+
+      <div>
+        <h5>Projeto</h5>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#metodologia">Metodologia</a></li>
+          <li><a href="#etapas">Etapas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Ecossistema</h5>
+        <ul>
+          <li><a href="#helice">Quádrupla Hélice</a></li>
+          <li><a href="#impacto">Impacto &amp; ODS</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Parceria</h5>
+        <ul>
+          <li><a href="#">UTFPR Câmpus Santa Helena</a></li>
+          <li><a href="#">NAPI GDCT&amp;I do Paraná</a></li>
+          <li><a href="#">Iguassu Valley</a></li>
+          <li><a href="#contato">Fale conosco</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span><span class="marker">●</span> NOV 2025 — NOV 2028 · INOVASH HUB v0.1</span>
+      <span>© 2025 UTFPR Câmpus Santa Helena. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+/* ============================== NAV ============================== */
+const nav = document.getElementById('nav');
+const drawer = document.getElementById('navDrawer');
+const toggle = document.getElementById('menuToggle');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 8);
+}, { passive: true });
+
+toggle.addEventListener('click', () => {
+  const open = drawer.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
+});
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  drawer.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}));
+
+/* ============================== REVEAL ON SCROLL ============================== */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ============================== PROGRESS RINGS ============================== */
+const ringIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const wrap = entry.target;
+    const fg = wrap.querySelector('.fg');
+    const pct = Number(wrap.getAttribute('data-progress')) || 0;
+    const circ = 2 * Math.PI * 42;
+    fg.setAttribute('stroke-dasharray', String(circ));
+    fg.style.strokeDashoffset = String(circ * (1 - pct / 100));
+    ringIO.unobserve(wrap);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.status-card__chart').forEach(el => ringIO.observe(el));
+
+/* ============================== FORM ============================== */
+const form = document.getElementById('contactForm');
+const status = document.getElementById('formStatus');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  status.style.display = 'block';
+  form.reset();
+  setTimeout(() => { status.style.display = 'none'; }, 4500);
+});
+</script>
+
+</body>
+</html>
