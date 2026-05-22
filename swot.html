@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SWOT do Espaço Maker — InovaSH Hub | UTFPR Santa Helena</title>
+<meta name="description" content="Análise SWOT do Espaço Maker da UTFPR Santa Helena, candidato a núcleo de operação inicial do InovaSH Hub. Em breve, novas informações." />
+
+<!-- ============================== FONTS ============================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+
+<style>
+  /* ====== layout específico desta página ====== */
+  .soon {
+    min-height: 60vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding-block: clamp(56px, 8vw, 120px);
+  }
+  .soon__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .soon__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--f-mono);
+    font-size: clamp(12px, 0.6vw + 0.4rem, 14px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tech);
+    background: rgba(0, 200, 150, 0.1);
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-bottom: clamp(20px, 2.5vw, 32px);
+  }
+  .soon__badge i {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--tech);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  .soon h1 {
+    font-size: clamp(2rem, 4vw + 0.5rem, 4.2rem);
+    line-height: 1.1;
+    margin-bottom: clamp(16px, 2vw, 28px);
+  }
+  .soon__lede {
+    font-size: clamp(1.05rem, 0.7vw + 0.85rem, 1.4rem);
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: clamp(28px, 3.5vw, 44px);
+  }
+  .soon__ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 640px) {
+    .soon__ctas { flex-direction: column; align-items: stretch; }
+    .soon__ctas .btn { width: 100%; justify-content: center; }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ============================== NAV ============================== -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand" aria-label="InovaSH Hub">
+      <span class="brand__mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h4l2-7 4 14 2-7h6"/>
+        </svg>
+      </span>
+      <span>
+        InovaSH Hub
+        <small>UTFPR · Santa Helena</small>
+      </span>
+    </a>
+
+    <a class="subnav__back" href="index.html#noticias">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar ao site
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================== CONTEÚDO ============================== -->
+<section class="soon">
+  <div class="container">
+    <div class="soon__inner">
+      <span class="soon__badge"><i></i>Em breve</span>
+      <span class="eyebrow">SWOT · Espaço Maker UTFPR Santa Helena</span>
+      <h1>Em breve, novas informações.</h1>
+      <p class="soon__lede">
+        Estamos finalizando o diagnóstico estratégico do Espaço Maker da UTFPR Santa Helena —
+        candidato a núcleo de operação inicial do InovaSH Hub. Os resultados da análise SWOT
+        serão publicados aqui em breve.
+      </p>
+
+      <div class="soon__ctas">
+        <a class="btn btn--primary" href="index.html#noticias">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Voltar para notícias
+        </a>
+        <a class="btn btn--ghost" href="index.html#contato">
+          Acompanhe o projeto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand" style="color:#fff">
+          <span class="brand__mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+          </span>
+          <span style="color:#fff">
+            InovaSH Hub
+            <small style="color:#8aa5c4">UTFPR · Santa Helena</small>
+          </span>
+        </a>
+        <p>Projeto de extensão universitária construindo o hub de inovação do oeste do Paraná — junto com quem faz a região acontecer.</p>
+      </div>
+
+      <div>
+        <h5>Projeto</h5>
+        <ul>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#objetivos">Objetivos</a></li>
+          <li><a href="index.html#metodologia">Metodologia</a></li>
+          <li><a href="index.html#etapas">Etapas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Ecossistema</h5>
+        <ul>
+          <li><a href="index.html#helice">Quádrupla Hélice</a></li>
+          <li><a href="index.html#impacto">Impacto &amp; ODS</a></li>
+          <li><a href="index.html#equipe">Equipe</a></li>
+          <li><a href="index.html#noticias">Notícias</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Participe</h5>
+        <ul>
+          <li><a href="formularios.html">Formulários online</a></li>
+          <li><a href="index.html#contato">Fale conosco</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span><span class="marker">●</span> NOV 2025 — NOV 2028 · INOVASH HUB v0.1</span>
+      <span>© 2025 UTFPR Câmpus Santa Helena. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* navbar ganha borda ao rolar */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 8);
+}, { passive: true });
+</script>
+
+</body>
+</html>

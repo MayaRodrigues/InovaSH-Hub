@@ -720,7 +720,7 @@ section { padding-block: var(--section-pad); position: relative; }
   border-radius: 4px; color: var(--blue); font-weight: 500;
 }
 .member__info { padding: clamp(16px, 1.8vw, 26px); }
-.member__info strong { display: block; font-family: var(--f-display); font-weight: 600; font-size: clamp(30px, 0.4vw + 0.78rem, 25px); line-height: 1.3; margin-bottom: 5px; }
+.member__info strong { display: block; font-family: var(--f-display); font-weight: 600; font-size: clamp(15px, 0.4vw + 0.78rem, 22px); line-height: 1.3; margin-bottom: 5px; }
 .member__info span { font-size: clamp(13px, 0.3vw + 0.72rem, 16px); color: var(--muted); }
 
 /* ============================================================
@@ -925,21 +925,45 @@ footer ul a:hover { color: var(--tech-soft); }
 .mono   { font-family: var(--f-mono); }
 
 /* ============================================================
-   AJUSTE ESTRUTURAL — telas estreitas (tablet / celular)
-   Única quebra: empilha o que não pode ser fluido.
+   RESPONSIVO — Mobile, Tablet, Notebook, Desktop
+   Estratégia: design fluido + breakpoints estruturais granulares.
    ============================================================ */
-@media (max-width: 900px) {
-  /* NAV → menu hamburguer */
-  .nav__links { display: none; }
+
+/* === NOTEBOOK MENOR (≤ 1200px) — reduz folgas do nav === */
+@media (max-width: 1200px) {
+  .nav__links { gap: clamp(10px, 1.4vw, 24px); }
+  .nav__links a { font-size: clamp(15px, 1.2vw, 18px); }
+}
+
+/* === TABLET LANDSCAPE / NOTEBOOK PEQUENO (≤ 1024px) === */
+@media (max-width: 1024px) {
+  /* esconde o CTA do nav antes do hamburguer pra evitar overflow */
   .nav__cta.desktop { display: none; }
+
+  /* hero em 2 colunas ainda funciona, mas com gap menor */
+  .hero__grid { gap: clamp(24px, 3.5vw, 56px); }
+  .hero__visual { max-width: 420px; }
+
+  /* timeline em 2 linhas (3+2) */
+  .tl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tl::before { left: 24px; right: 24px; }
+
+  /* matriz LFM continua 4 colunas mas células mais compactas */
+  .lfm__cell { padding: clamp(10px, 1.2vw, 16px); }
+}
+
+/* === TABLET / TELAS ESTREITAS (≤ 900px) === */
+@media (max-width: 900px) {
+  /* NAV → hamburguer */
+  .nav__links { display: none; }
   .menu-toggle { display: flex; }
   .nav__drawer.open { display: flex; }
 
   /* HERO → empilha; esconde o visual decorativo */
-  .hero__grid { grid-template-columns: 1fr; }
+  .hero__grid { grid-template-columns: 1fr; gap: 0; }
   .hero__visual { display: none; }
 
-  /* TIMELINE → vertical com linha conectora */
+  /* TIMELINE → vertical com linha conectora à esquerda */
   .tl {
     grid-template-columns: 1fr;
     gap: 0;
@@ -959,6 +983,153 @@ footer ul a:hover { color: var(--tech-soft); }
   /* MATRIZ LFM → 2 colunas, sem cabeçalho */
   .lfm__head { display: none; }
   .lfm__row { grid-template-columns: 1fr 1fr; }
+
+  /* OBJETIVO GERAL → empilha número e texto */
+  .bigobj { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .bigobj__num { font-size: clamp(3rem, 14vw, 6rem); }
+  .bigobj h3 { flex: 1 1 auto; }
+
+  /* IMPACT → quando empilha, troca borda lateral por superior */
+  .impact-num + .impact-num {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.12);
+    padding-left: 0;
+    padding-top: clamp(24px, 3.5vw, 40px);
+  }
+
+  /* FOOTER bottom: empilha legendas */
+  .footer__bottom { font-size: clamp(12px, 2.2vw, 16px); }
+}
+
+/* === MOBILE (≤ 640px) — celular === */
+@media (max-width: 640px) {
+  /* tipografia mais compacta */
+  :root { --section-pad: clamp(48px, 12vw, 80px); }
+
+  /* HERO — remove quebras forçadas, melhora legibilidade */
+  .hero h1 br { display: none; }
+  .hero h1 {
+    font-size: clamp(1.9rem, 8.5vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+  }
+  .hero__tag { font-size: 11px; padding: 6px 12px 6px 6px; gap: 8px; }
+  .hero__tag span:first-child { font-size: 11px; padding: 3px 10px; }
+  .hero__lede { font-size: clamp(1rem, 4vw, 1.2rem); }
+  .hero__ctas { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero__ctas .btn { width: 100%; justify-content: center; }
+  .hero__meta { grid-template-columns: 1fr 1fr; max-width: 100%; gap: 16px; }
+  .hero__meta div strong { font-size: 15px; }
+
+  /* títulos de seção compactos */
+  .section-title { font-size: clamp(1.6rem, 7.2vw, 2.4rem); }
+  .section-lede  { font-size: clamp(1rem, 4vw, 1.2rem); }
+
+  /* PARTNERS strip — pontos viram delimitadores leves */
+  .partners__row {
+    gap: 10px;
+    font-size: clamp(11px, 3vw, 14px);
+    letter-spacing: 0.08em;
+  }
+  .partners__row span.dot { font-size: 8px; }
+
+  /* SOBRE — espaço respira mais */
+  .about__body p { font-size: clamp(0.98rem, 3.8vw, 1.15rem); }
+
+  /* OBJETIVOS — bigobj ainda mais compacto */
+  .bigobj { padding: 28px 22px; }
+  .bigobj__num { font-size: clamp(2.8rem, 18vw, 4.5rem); }
+  .bigobj h3 { font-size: clamp(1.1rem, 4.5vw, 1.5rem); }
+  .obj-card { padding: 22px; }
+  .obj-card p { font-size: clamp(14px, 3.8vw, 16px); line-height: 1.65; }
+
+  /* METODOLOGIA — LFM em 1 coluna pra evitar cortes */
+  .lfm__row { grid-template-columns: 1fr; }
+  .lfm__row .lfm__cell { font-size: clamp(14px, 3.5vw, 16px); }
+
+  /* TIMELINE — texto mais compacto */
+  .tl__step h4 { font-size: clamp(1.05rem, 4.5vw, 1.3rem); }
+  .tl__step p  { font-size: clamp(14px, 3.6vw, 16px); }
+
+  /* HÉLICE — cards menores */
+  .helix-card { min-height: 180px; padding: 24px; }
+  .helix-card h4 { font-size: clamp(1.3rem, 5.5vw, 1.8rem); }
+  .helix-card p  { font-size: clamp(14px, 3.8vw, 16px); }
+  .helix-card__top { margin-bottom: 22px; }
+
+  /* STATUS — empilha gráfico em cima do texto */
+  .status-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 18px;
+  }
+  .status-card__chart { width: 96px; height: 96px; }
+  .status-card h4 { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
+  .status-card p  { font-size: clamp(14px, 3.8vw, 16px); }
+
+  /* IMPACTO — números gigantes ficam proporcionais */
+  .impact-num strong { font-size: clamp(2.8rem, 16vw, 4.5rem); }
+  .impact-num small  { font-size: 13px; }
+
+  /* EQUIPE */
+  .member__info { padding: 16px; }
+  .member__info strong { font-size: 15px; }
+
+  /* NOTÍCIAS */
+  .post__body { padding: 20px; }
+  .post__body h4 { font-size: clamp(1.1rem, 4.5vw, 1.3rem); }
+
+  /* CONTATO */
+  .contact__form { padding: 22px; }
+  .contact__side h3 { font-size: clamp(1.2rem, 5vw, 1.5rem); }
+
+  /* FOOTER — empilha bottom row */
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+  }
+  footer h5 { font-size: 14px; margin-bottom: 14px; }
+
+  /* NAV DRAWER — itens um pouco menores */
+  .nav__drawer { padding: 20px var(--gutter) 28px; }
+  .nav__drawer a { font-size: clamp(18px, 5vw, 24px); padding: 14px 0; }
+
+  /* FORMULÁRIOS — QR + link empilham */
+  .formcard { padding: 24px; }
+  .formcard h2 { font-size: clamp(1.25rem, 5vw, 1.6rem); }
+  .formcard__action { flex-direction: column; align-items: stretch; }
+  .qr { align-self: center; width: 180px; height: 180px; }
+  .formcard__link { flex: 1 1 auto; }
+
+  /* página de formulários — header */
+  .formhero h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  .subnav__back { font-size: 13px; }
+  .subnav__back svg { width: 1em; height: 1em; }
+}
+
+/* === MOBILE PEQUENO (≤ 380px) — iPhone SE etc. === */
+@media (max-width: 380px) {
+  :root { --gutter: 16px; }
+
+  .brand small { display: none; }
+  .brand { font-size: 15px; gap: 10px; }
+  .brand__mark { width: 34px; height: 34px; }
+
+  .hero h1 { font-size: 1.7rem; }
+  .hero__meta { grid-template-columns: 1fr; }
+
+  .partners__row { font-size: 10px; gap: 8px; }
+
+  .btn { padding: 11px 18px; font-size: 14px; }
+  .btn--sm { padding: 9px 14px; font-size: 13px; }
+}
+
+/* === LANDSCAPE em celulares baixos — evita hero gigante === */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 900px) {
+  .hero { padding-top: 32px; padding-bottom: 40px; }
+  .hero h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
 }
 
 /* ============================================================
