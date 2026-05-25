@@ -167,6 +167,37 @@ section { padding-block: var(--section-pad); position: relative; }
   font-weight: 400; margin-top: 2px;
 }
 
+/* grupo: marca InovaSH + logo UTFPR menor (lado a lado) */
+.nav__brand-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 18px);
+  flex-shrink: 0;
+}
+.nav__utfpr {
+  display: inline-flex;
+  align-items: center;
+  padding-left: clamp(10px, 1.2vw, 18px);
+  border-left: 1px solid var(--line);
+  flex-shrink: 0;
+  transition: opacity .2s;
+}
+.nav__utfpr:hover { opacity: .75; }
+.nav__utfpr img {
+  height: clamp(28px, 2.4vw, 38px);
+  width: auto;
+  display: block;
+}
+/* placeholder visível enquanto o arquivo da logo não existir */
+.nav__utfpr.is-empty {
+  width: clamp(60px, 6vw, 90px);
+  height: clamp(28px, 2.4vw, 38px);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  border-left: 1px dashed var(--line);
+  padding-left: 0;
+}
+
 /* links */
 .nav__links {
   display: flex;
@@ -710,6 +741,13 @@ section { padding-block: var(--section-pad); position: relative; }
   position: relative; display: grid; place-items: center;
   color: var(--ink); font-family: var(--f-display);
   font-weight: 600; font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -0.02em;
+  overflow: hidden;
+}
+.member__avatar {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
 }
 .member__photo::after {
   content: attr(data-role);
@@ -898,6 +936,39 @@ footer {
   margin-bottom: clamp(36px, 4.5vw, 72px);
 }
 .footer__brand p { color: #8aa5c4; max-width: 36ch; margin-top: 20px; }
+
+/* bloco "Realização" + logo UTFPR no footer (versão maior) */
+.footer__partner {
+  margin-top: clamp(24px, 2.5vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer__partner-label {
+  font-family: var(--f-mono);
+  font-size: clamp(11px, 0.6vw, 13px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8aa5c4;
+}
+.footer__utfpr {
+  display: inline-flex;
+  align-items: center;
+  height: clamp(48px, 5vw, 72px);
+  transition: opacity .2s;
+}
+.footer__utfpr:hover { opacity: .8; }
+.footer__utfpr img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+/* placeholder visível enquanto o arquivo da logo não existir */
+.footer__utfpr.is-empty {
+  width: clamp(140px, 12vw, 200px);
+  border: 1px dashed rgba(255,255,255,.18);
+  border-radius: 8px;
+}
 footer h5 {
   color: var(--white); font-family: var(--f-mono);
   font-size: clamp(20px, 0.6vw, 24px); letter-spacing: 0.12em;
@@ -1116,6 +1187,12 @@ footer ul a:hover { color: var(--tech-soft); }
   .brand small { display: none; }
   .brand { font-size: 15px; gap: 10px; }
   .brand__mark { width: 34px; height: 34px; }
+
+  /* logo UTFPR no nav fica mais discreta em telas muito estreitas */
+  .nav__brand-group { gap: 8px; }
+  .nav__utfpr { padding-left: 8px; }
+  .nav__utfpr img { height: 26px; }
+  .nav__utfpr.is-empty { width: 50px; height: 26px; }
 
   .hero h1 { font-size: 1.7rem; }
   .hero__meta { grid-template-columns: 1fr; }

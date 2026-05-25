@@ -18,17 +18,23 @@
 <!-- ============================== NAV ============================== -->
 <header class="nav" id="nav">
   <div class="container nav__inner">
-    <a href="index.html" class="brand" aria-label="InovaSH Hub">
-      <span class="brand__mark" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12h4l2-7 4 14 2-7h6"/>
-        </svg>
-      </span>
-      <span>
-        InovaSH Hub
-        <small>UTFPR · Santa Helena</small>
-      </span>
-    </a>
+    <div class="nav__brand-group">
+        <!-- Logo UTFPR (versão menor) — arquivo esperado: img/utfpr.png -->
+      <a href="https://portal.utfpr.edu.br/campus/santahelena" class="nav__utfpr" aria-label="UTFPR" target="_blank" rel="noopener">
+        <img src="img/logo_pretoUTFPR.png" alt="UTFPR" onerror="this.parentElement.classList.add('is-empty');this.remove()"/>
+      </a>
+      <a href="index.html" class="brand" aria-label="InovaSH Hub">
+        <span class="brand__mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h4l2-7 4 14 2-7h6"/>
+          </svg>
+        </span>
+        <span>
+          InovaSH Hub
+          <small>UTFPR · Santa Helena</small>
+        </span>
+      </a>
+    </div>
 
     <a class="subnav__back" href="index.html#noticias">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -84,7 +90,7 @@
           <!-- QR CODE — substitua o conteúdo abaixo pela imagem do QR Code.
                Ex.: <img src="qrcode-governanca.png" alt="QR Code do formulário de Governança" /> -->
           <div class="qr">
-            <img src="/img/formulario1.jpg" alt="QR Code do formulário sobre Hub de Inovação" />
+            <img src="img/formulario1.jpg" alt="QR Code do formulário sobre Hub de Inovação" />
             <span class="qr__hint">QR Code<br />do Formulário 1<br />(inserir aqui)</span>
           </div>
 
@@ -95,7 +101,6 @@
               Responder o Formulário 1
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <p>Link: cole aqui o endereço do formulário.</p>
           </div>
         </div>
       </article>
@@ -126,7 +131,7 @@
           <!-- QR CODE — substitua o conteúdo abaixo pela imagem do QR Code.
                Ex.: <img src="qrcode-hub.png" alt="QR Code do formulário sobre Hub de Inovação" /> -->
           <div class="qr">
-            <img src="/img/formulario2.jpg" alt="QR Code do formulário sobre Hub de Inovação" />
+            <img src="img/formulario2.jpg" alt="QR Code do formulário sobre Hub de Inovação" />
             <span class="qr__hint">QR Code<br />do Formulário 2<br />(inserir aqui)</span>
           </div>
 
@@ -137,7 +142,6 @@
               Responder o Formulário 2
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <p>Link: cole aqui o endereço do formulário.</p>
           </div>
         </div>
       </article>
@@ -168,6 +172,14 @@
           </span>
         </a>
         <p>Projeto de extensão universitária construindo o hub de inovação do oeste do Paraná — junto com quem faz a região acontecer.</p>
+
+        <!-- Logo institucional UTFPR — arquivo esperado: img/utfpr_branca.png (versão branca p/ fundo escuro) -->
+        <div class="footer__partner">
+          <span class="footer__partner-label">Realização</span>
+          <a href="https://www.utfpr.edu.br/campus/santahelena" class="footer__utfpr" aria-label="UTFPR" target="_blank" rel="noopener">
+            <img src="img/logo_utfpr.png" alt="UTFPR" onerror="this.parentElement.classList.add('is-empty');this.remove()"/>
+          </a>
+        </div>
       </div>
 
       <div>
