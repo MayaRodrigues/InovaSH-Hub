@@ -215,36 +215,95 @@ section { padding-block: var(--section-pad); position: relative; }
 
 .nav__cta { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; }
 
-/* hamburguer — oculto por padrão */
+/* hamburguer — oculto por padrão, vira X quando aberto */
 .menu-toggle {
   display: none;
   width: 44px; height: 44px;
+  flex-direction: column;
   align-items: center; justify-content: center;
+  gap: 5px;
   border-radius: 8px; flex-shrink: 0;
+  position: relative; z-index: 60;
+  transition: background .2s;
 }
 .menu-toggle:hover { background: var(--paper); }
+.menu-toggle__bar {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .2s ease, background .2s;
+  transform-origin: center;
+}
+.menu-toggle.is-open { background: var(--paper); }
+.menu-toggle.is-open .menu-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.is-open .menu-toggle__bar:nth-child(2) { opacity: 0; transform: scaleX(.4); }
+.menu-toggle.is-open .menu-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* drawer */
+/* backdrop escuro atrás do drawer */
+.nav__backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 37, 64, .55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 38;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.nav__backdrop.open { opacity: 1; }
+
+/* drawer — sempre presente em mobile (animação via opacity/transform) */
 .nav__drawer {
   display: none;
   position: fixed;
-  inset: var(--nav-h) 0 0 0;
+  top: var(--nav-h); left: 0; right: 0;
+  max-height: calc(100vh - var(--nav-h));
+  max-height: calc(100dvh - var(--nav-h));
   background: var(--white);
   flex-direction: column;
-  padding: 25px var(--gutter) 32px;
-  z-index: 40;
+  padding: 20px var(--gutter) 28px;
+  z-index: 45;
   border-top: 1px solid var(--line);
+  box-shadow: 0 24px 48px -16px rgba(10,37,64,.25);
   overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translateY(-12px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform .3s ease, opacity .25s ease, visibility 0s linear .3s;
+}
+.nav__drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: transform .3s ease, opacity .25s ease, visibility 0s linear 0s;
 }
 .nav__drawer a {
   display: block;
-  padding: 16px 0;
+  padding: 14px 0;
   font-family: var(--f-display);
-  font-size: clamp(20px, 4vw, 32px);
+  font-weight: 600;
+  font-size: clamp(17px, 3.6vw, 22px);
   border-bottom: 1px solid var(--line);
   color: var(--ink);
+  transition: color .2s, padding-left .2s;
 }
-.nav__drawer .btn { margin-top: 25px; align-self: flex-start; }
+.nav__drawer a:hover { color: var(--blue); padding-left: 4px; }
+.nav__drawer .btn {
+  margin-top: 20px;
+  align-self: stretch;
+  justify-content: center;
+  border-bottom: none;
+  font-size: 16px;
+}
+.nav__drawer .btn:hover { padding-left: clamp(20px, 1.8vw, 32px); }
+
+/* trava o scroll do body enquanto o drawer está aberto */
+body.menu-open { overflow: hidden; }
 
 /* ============================================================
    BOTÕES
@@ -543,13 +602,15 @@ section { padding-block: var(--section-pad); position: relative; }
   align-items: start;
 }
 
-/* Matriz LFM */
+/* Matriz LFM — sempre em formato de tabela 4 colunas, em qualquer dispositivo */
 .lfm {
   background: var(--paper); border-radius: var(--radius-lg);
-  padding: 8px; border: 1px solid var(--line); overflow: hidden;
+  padding: 8px; border: 1px solid var(--line);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .lfm__head {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 4px; margin-bottom: 4px;
 }
 .lfm__cell {
@@ -559,10 +620,13 @@ section { padding-block: var(--section-pad); position: relative; }
   font-family: var(--f-mono);
   font-size: clamp(16px, 0.4vw + 0.5rem, 19px);
   text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .lfm__cell--h { background: var(--ink); color: var(--white); font-weight: 600; }
 .lfm__row {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 4px; margin-bottom: 4px;
 }
 .lfm__row .lfm__cell {
@@ -1055,7 +1119,8 @@ footer ul a:hover { color: var(--tech-soft); }
   /* NAV → hamburguer */
   .nav__links { display: none; }
   .menu-toggle { display: flex; }
-  .nav__drawer.open { display: flex; }
+  .nav__drawer { display: flex; }
+  .nav__backdrop { display: block; }
 
   /* HERO → empilha; esconde o visual decorativo */
   .hero__grid { grid-template-columns: 1fr; gap: 0; }
@@ -1078,9 +1143,11 @@ footer ul a:hover { color: var(--tech-soft); }
   .tl__step { padding-top: 0; padding-left: 24px; padding-bottom: 24px; }
   .tl__dot { top: 2px; left: -11px; }
 
-  /* MATRIZ LFM → 2 colunas, sem cabeçalho */
-  .lfm__head { display: none; }
-  .lfm__row { grid-template-columns: 1fr 1fr; }
+  /* MATRIZ LFM → mantém 4 colunas, apenas reduz padding/fonte */
+  .lfm__cell { padding: clamp(8px, 1.4vw, 14px); font-size: clamp(12px, 1.4vw, 14px); }
+  .lfm__row .lfm__cell { font-size: clamp(13px, 1.4vw, 15px); line-height: 1.45; }
+  .lfm__cell strong { font-size: 0.95em; margin-bottom: 2px; }
+  .lfm__cell span { font-size: 0.85em; }
 
   /* OBJETIVO GERAL → empilha número e texto */
   .bigobj { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -1141,9 +1208,13 @@ footer ul a:hover { color: var(--tech-soft); }
   .obj-card { padding: 22px; }
   .obj-card p { font-size: clamp(14px, 3.8vw, 16px); line-height: 1.65; }
 
-  /* METODOLOGIA — LFM em 1 coluna pra evitar cortes */
-  .lfm__row { grid-template-columns: 1fr; }
-  .lfm__row .lfm__cell { font-size: clamp(14px, 3.5vw, 16px); }
+  /* METODOLOGIA — LFM continua 4 colunas; quando não couber, scroll horizontal */
+  .lfm { padding: 5px; }
+  .lfm__head, .lfm__row { gap: 3px; margin-bottom: 3px; grid-template-columns: repeat(4, minmax(110px, 1fr)); }
+  .lfm__cell { padding: 8px 7px; font-size: 12px; border-radius: 8px; }
+  .lfm__row .lfm__cell { font-size: 12.5px; line-height: 1.4; }
+  .lfm__cell strong { font-size: 0.95em; margin-bottom: 2px; }
+  .lfm__cell span { font-size: 0.85em; }
 
   /* TIMELINE — texto mais compacto */
   .tl__step h4 { font-size: clamp(1.05rem, 4.5vw, 1.3rem); }
@@ -1190,9 +1261,10 @@ footer ul a:hover { color: var(--tech-soft); }
   }
   footer h5 { font-size: 14px; margin-bottom: 14px; }
 
-  /* NAV DRAWER — itens um pouco menores */
-  .nav__drawer { padding: 20px var(--gutter) 28px; }
-  .nav__drawer a { font-size: clamp(18px, 5vw, 24px); padding: 14px 0; }
+  /* NAV DRAWER — padding lateral acompanha o gutter da página */
+  .nav__drawer { padding: 16px var(--gutter) 24px; }
+  .nav__drawer a { font-size: clamp(16px, 4.4vw, 20px); padding: 12px 0; }
+  .nav__drawer .btn { font-size: 15px; }
 
   /* FORMULÁRIOS — QR + link empilham */
   .formcard { padding: 24px; }
@@ -1234,8 +1306,8 @@ footer ul a:hover { color: var(--tech-soft); }
   .btn { padding: 12px 18px; font-size: 14.5px; }
   .btn--sm { padding: 10px 14px; font-size: 13.5px; }
 
-  /* partners strip — texto bem compacto */
-  .partners__row { font-size: 10.5px; gap: 9px; }
+  /* partners strip — texto compacto, mas legível */
+  .partners__row { font-size: 11px; gap: 9px; }
 
   /* formulários — QR ainda confortável */
   .qr { width: 170px; height: 170px; }
@@ -1261,8 +1333,8 @@ footer ul a:hover { color: var(--tech-soft); }
   .hero__lede { font-size: 0.95rem; }
   .hero__meta { grid-template-columns: 1fr; }
 
-  /* partners — extremamente compacto */
-  .partners__row { font-size: 9.5px; gap: 6px; }
+  /* partners — compacto, ainda legível (mín. 11px) */
+  .partners__row { font-size: 11px; gap: 6px; letter-spacing: 0.06em; }
 
   /* botões compactos */
   .btn { padding: 10px 14px; font-size: 13px; }
@@ -1279,6 +1351,26 @@ footer ul a:hover { color: var(--tech-soft); }
   /* footer mais enxuto */
   .footer__bottom { font-size: 11px; }
   .footer__utfpr { height: 44px; }
+
+  /* MATRIZ LFM — 4 colunas com scroll horizontal quando não couber (legibilidade > caber tudo) */
+  .lfm { padding: 4px; }
+  .lfm__head, .lfm__row { gap: 2px; margin-bottom: 2px; grid-template-columns: repeat(4, minmax(100px, 1fr)); }
+  .lfm__cell { padding: 6px 5px; font-size: 11px; letter-spacing: 0.04em; border-radius: 6px; }
+  .lfm__row .lfm__cell { font-size: 11.5px; line-height: 1.4; }
+  .lfm__cell strong { font-size: 1em; }
+  .lfm__cell span { font-size: 0.85em; }
+
+  /* SUBNAV (formularios.html / swot.html) — encolhe pra caber junto da marca */
+  .subnav__back { font-size: 11px; gap: 5px; letter-spacing: 0; }
+  .subnav__back svg { width: 1em; height: 1em; }
+
+  /* NAV inner — gap mínimo para liberar espaço */
+  .nav__inner { gap: 8px; }
+
+  /* SOON (swot.html) — título e lede mais compactos */
+  .soon h1 { font-size: 1.5rem; }
+  .soon__lede { font-size: 0.95rem; }
+  .soon__badge { font-size: 10px; padding: 6px 12px; }
 }
 
 /* === LANDSCAPE em celulares baixos — evita hero gigante === */
