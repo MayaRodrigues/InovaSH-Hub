@@ -996,22 +996,49 @@ footer ul a:hover { color: var(--tech-soft); }
 .mono   { font-family: var(--f-mono); }
 
 /* ============================================================
-   RESPONSIVO — Mobile, Tablet, Notebook, Desktop
-   Estratégia: design fluido + breakpoints estruturais granulares.
+   RESPONSIVO — Mobile S → 4K
+   Breakpoints (px): 320 · 375 · 425 · 768 · 1024 · 1440 · 2560
+   Estratégia: design fluido (clamp) + breakpoints estruturais.
    ============================================================ */
 
-/* === NOTEBOOK MENOR (≤ 1200px) — reduz folgas do nav === */
-@media (max-width: 1200px) {
-  .nav__links { gap: clamp(10px, 1.4vw, 24px); }
-  .nav__links a { font-size: clamp(15px, 1.2vw, 18px); }
+/* ============================================================
+   ▲ MIN-WIDTH: faixas acima do design padrão (Desktop, 4K)
+   ============================================================ */
+
+/* === DESKTOP (≥ 1440px) — limita largura para conforto de leitura === */
+@media (min-width: 1440px) {
+  .container { max-width: 1760px; }
+  .hero__copy { max-width: 760px; }
+  .section-lede { max-width: 70ch; }
 }
 
-/* === TABLET LANDSCAPE / NOTEBOOK PEQUENO (≤ 1024px) === */
+/* === 4K (≥ 2560px) — evita esticar o layout até as bordas === */
+@media (min-width: 2560px) {
+  :root {
+    --gutter: 120px;
+    --section-pad: 180px;
+    --nav-h: 104px;
+  }
+  .container { max-width: 2200px; }
+  body { font-size: 22px; line-height: 1.6; }
+  .nav__links a { font-size: 22px; }
+  .hero h1 { font-size: 5.5rem; }
+  .section-title { font-size: 5rem; }
+  .hero__visual { max-width: 620px; }
+}
+
+/* ============================================================
+   ▼ MAX-WIDTH: faixas abaixo do design padrão (Laptop → Mobile)
+   ============================================================ */
+
+/* === LAPTOP (≤ 1024px) — encolhe nav e hero === */
 @media (max-width: 1024px) {
-  /* esconde o CTA do nav antes do hamburguer pra evitar overflow */
+  /* nav: gaps menores e oculta CTA antes do hamburguer */
+  .nav__links { gap: clamp(10px, 1.4vw, 24px); }
+  .nav__links a { font-size: clamp(15px, 1.2vw, 18px); }
   .nav__cta.desktop { display: none; }
 
-  /* hero em 2 colunas ainda funciona, mas com gap menor */
+  /* hero em 2 colunas funciona, mas com gap menor */
   .hero__grid { gap: clamp(24px, 3.5vw, 56px); }
   .hero__visual { max-width: 420px; }
 
@@ -1023,8 +1050,8 @@ footer ul a:hover { color: var(--tech-soft); }
   .lfm__cell { padding: clamp(10px, 1.2vw, 16px); }
 }
 
-/* === TABLET / TELAS ESTREITAS (≤ 900px) === */
-@media (max-width: 900px) {
+/* === TABLET (≤ 768px) — nav vira hamburguer, hero empilha === */
+@media (max-width: 768px) {
   /* NAV → hamburguer */
   .nav__links { display: none; }
   .menu-toggle { display: flex; }
@@ -1072,9 +1099,9 @@ footer ul a:hover { color: var(--tech-soft); }
   .footer__bottom { font-size: clamp(12px, 2.2vw, 16px); }
 }
 
-/* === MOBILE (≤ 640px) — celular === */
-@media (max-width: 640px) {
-  /* tipografia mais compacta */
+/* === MOBILE L (≤ 425px) — celulares modernos (iPhone Pro, Android padrão) === */
+@media (max-width: 425px) {
+  /* tipografia e padding mais compactos */
   :root { --section-pad: clamp(48px, 12vw, 80px); }
 
   /* HERO — remove quebras forçadas, melhora legibilidade */
@@ -1178,29 +1205,80 @@ footer ul a:hover { color: var(--tech-soft); }
   .formhero h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
   .subnav__back { font-size: 13px; }
   .subnav__back svg { width: 1em; height: 1em; }
+
+  /* logo UTFPR no nav: já um pouco menor que no desktop */
+  .nav__brand-group { gap: 10px; }
+  .nav__utfpr { padding-left: 10px; }
+  .nav__utfpr img { height: 28px; }
+  .nav__utfpr.is-empty { width: 56px; height: 28px; }
 }
 
-/* === MOBILE PEQUENO (≤ 380px) — iPhone SE etc. === */
-@media (max-width: 380px) {
-  :root { --gutter: 16px; }
+/* === MOBILE M (≤ 375px) — iPhone padrão / SE 2ª/3ª geração === */
+@media (max-width: 375px) {
+  :root { --gutter: 18px; }
 
-  .brand small { display: none; }
+  /* brand fica mais enxuta */
   .brand { font-size: 15px; gap: 10px; }
-  .brand__mark { width: 34px; height: 34px; }
+  .brand__mark { width: 36px; height: 36px; }
 
-  /* logo UTFPR no nav fica mais discreta em telas muito estreitas */
+  /* logo UTFPR — divisória mais discreta */
   .nav__brand-group { gap: 8px; }
   .nav__utfpr { padding-left: 8px; }
   .nav__utfpr img { height: 26px; }
   .nav__utfpr.is-empty { width: 50px; height: 26px; }
 
-  .hero h1 { font-size: 1.7rem; }
+  /* hero — título principal não ultrapassa */
+  .hero h1 { font-size: 1.8rem; }
+
+  /* botões um pouco menores */
+  .btn { padding: 12px 18px; font-size: 14.5px; }
+  .btn--sm { padding: 10px 14px; font-size: 13.5px; }
+
+  /* partners strip — texto bem compacto */
+  .partners__row { font-size: 10.5px; gap: 9px; }
+
+  /* formulários — QR ainda confortável */
+  .qr { width: 170px; height: 170px; }
+}
+
+/* === MOBILE S (≤ 320px) — iPhone SE 1ª geração, Galaxy Fold fechado === */
+@media (max-width: 320px) {
+  :root { --gutter: 14px; }
+
+  /* esconde subtítulo do brand pra liberar espaço */
+  .brand small { display: none; }
+  .brand { font-size: 14px; gap: 8px; }
+  .brand__mark { width: 32px; height: 32px; }
+
+  /* logo UTFPR no nav fica mínima */
+  .nav__brand-group { gap: 6px; }
+  .nav__utfpr { padding-left: 6px; }
+  .nav__utfpr img { height: 24px; }
+  .nav__utfpr.is-empty { width: 44px; height: 24px; }
+
+  /* hero — título mínimo legível, meta em 1 coluna */
+  .hero h1 { font-size: 1.55rem; }
+  .hero__lede { font-size: 0.95rem; }
   .hero__meta { grid-template-columns: 1fr; }
 
-  .partners__row { font-size: 10px; gap: 8px; }
+  /* partners — extremamente compacto */
+  .partners__row { font-size: 9.5px; gap: 6px; }
 
-  .btn { padding: 11px 18px; font-size: 14px; }
-  .btn--sm { padding: 9px 14px; font-size: 13px; }
+  /* botões compactos */
+  .btn { padding: 10px 14px; font-size: 13px; }
+  .btn--sm { padding: 8px 12px; font-size: 12px; }
+
+  /* títulos de seção menores */
+  .section-title { font-size: 1.4rem; }
+
+  /* QR menor para caber bem */
+  .qr { width: 150px; height: 150px; }
+  .formcard { padding: 20px; }
+  .formcard h2 { font-size: 1.15rem; }
+
+  /* footer mais enxuto */
+  .footer__bottom { font-size: 11px; }
+  .footer__utfpr { height: 44px; }
 }
 
 /* === LANDSCAPE em celulares baixos — evita hero gigante === */
