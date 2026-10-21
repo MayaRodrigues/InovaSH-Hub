@@ -19,7 +19,6 @@ O **InovaSH Hub** é um projeto de extensão universitária da UTFPR Câmpus San
 
 1. **Levantar visão, necessidades e interesses** dos atores da Quádrupla Hélice por meio de formulários estruturados.
 2. **Realizar eventos de consulta pública** para validar coletivamente os achados e desenhar o hub.
-3. **Conectar os resultados ao NAPI GDCT&I PR**, garantindo continuidade e impacto sistêmico.
 
 ### Metodologia
 
